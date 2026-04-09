@@ -1,0 +1,37 @@
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cinaf_db
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: cinaf_user
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: "postgresql://cinaf_user:${POSTGRES_PASSWORD:-!ChangeMe!}@database:5432/cinaf_db?serverVersion=16&charset=utf8"
+      APP_SECRET: ${APP_SECRET:-8dd014480d5e1168bb6f0c4743ea7622}
+    ports:
+      - "8000:80"
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  database_data:

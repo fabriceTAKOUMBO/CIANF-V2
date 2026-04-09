@@ -1,0 +1,422 @@
+﻿ 
+
+CAHIER DES CHARGES
+Travail de Fin d'Ã‰tudes (TFE) 2025-2026
+CINAF v2
+Plateforme de Streaming Audiovisuel
+Ã‰tudiant
+Takoumbo Fabrice
+Ã‰cole
+ISL â€” Institut SupÃ©rieur de Lausanne
+FiliÃ¨re
+Bachelier en Informatique de Gestion
+AnnÃ©e acadÃ©mique
+2025-2026
+Date de rÃ©daction
+27 mars 2026
+Version du document
+v1.0
+Projet CINAF â€” Continuation du projet de stage â€” Mise en production rÃ©elle envisagÃ©e
+Table des matiÃ¨res
+TOC \h \u \z \t &quot;Heading 1,1,Heading 2,2,Heading 3,3,&quot;
+1. Introduction et contexte
+1.1 Origine du projet
+CINAF v2 est la continuation directe du projet CINAF initiÃ© lors du stage de Takoumbo Fabrice. Ce projet est nÃ© d'une volontÃ© de crÃ©er une plateforme numÃ©rique dÃ©diÃ©e Ã
+la valorisation des productions audiovisuelles africaines et indÃ©pendantes, un marchÃ© encore largement sous-reprÃ©sentÃ© dans l'Ã©cosystÃ¨me mondial du streaming.
+La premiÃ¨re version du projet, dÃ©veloppÃ©e dans un contexte de stage, a permis de poser les bases fonctionnelles de la plateforme (catalogue de films, gestion des utilisateurs, systÃ¨me d'abonnement). Le TFE 2025-2026 vise Ã
+consolider et enrichir cette base en y ajoutant notamment un module dÃ©diÃ© aux studios de production, rendant ainsi la plateforme beaucoup plus complÃ¨te et orientÃ©e vers une mise en production rÃ©elle.
+1.2 ProblÃ©matique
+Les plateformes de streaming dominantes (Netflix, Amazon Prime, Disney+) proposent peu de contenu africain et indÃ©pendant. Les crÃ©ateurs de contenu africains et les studios de production indÃ©pendants manquent d'une vitrine numÃ©rique adaptÃ©e Ã
+leurs besoins spÃ©cifiques, tant pour la diffusion que pour la gestion de leurs productions.
+CINAF v2 rÃ©pond Ã
+cette problÃ©matique en offrant :
+Un espace de diffusion dÃ©diÃ© aux films et sÃ©ries africains et indÃ©pendants.
+Un module studio de production permettant aux crÃ©ateurs de gÃ©rer leurs Å“uvres directement sur la plateforme.
+Un systÃ¨me d'abonnement et de monÃ©tisation adaptÃ© au marchÃ© cible.
+1.3 Vision Ã
+long terme
+Au-delÃ
+du cadre acadÃ©mique du TFE, CINAF v2 a pour vocation d'Ãªtre dÃ©ployÃ© en production rÃ©elle aprÃ¨s la soutenance. L'ensemble des choix technologiques, architecturaux et fonctionnels rÃ©alisÃ©s dans le cadre de ce travail sont guidÃ©s par cette perspective de mise en production effective, garantissant robustesse, scalabilitÃ© et maintenabilitÃ© de la solution.
+2. PrÃ©sentation du projet
+2.1 Description gÃ©nÃ©rale de CINAF v2
+CINAF v2 est une plateforme web de streaming audiovisuel destinÃ©e Ã
+la diffusion de films, sÃ©ries et contenus culturels africains et indÃ©pendants. La plateforme s'adresse Ã
+la fois aux spectateurs (abonnÃ©s), aux crÃ©ateurs de contenu (studios de production) et aux administrateurs chargÃ©s de la modÃ©ration et de la gestion du catalogue.
+L'application est conÃ§ue comme une plateforme SaaS (Software as a Service) accessible via navigateur web, avec une architecture moderne basÃ©e sur une API REST dÃ©couplÃ©e du frontend.
+2.2 Distinction CINAF v1 / CINAF v2
+FonctionnalitÃ©
+CINAF v1
+CINAF v2
+Catalogue films &amp; sÃ©ries
+Oui
+Oui (enrichi)
+Gestion des utilisateurs
+Oui
+Oui (Ã©tendu)
+SystÃ¨me d'abonnement
+Basique
+Stripe intÃ©grÃ©
+Module Studios de Production
+Non
+Oui (nouveautÃ©)
+Upload &amp; diffusion vidÃ©o
+LimitÃ©
+AWS S3 / Firebase
+Analytics crÃ©ateurs
+Non
+Oui
+Interface d'administration
+Basique
+ComplÃ¨te
+Lecteur vidÃ©o adaptatif
+Non
+Oui
+Notation &amp; commentaires
+Non
+Oui
+2.3 Objectifs gÃ©nÃ©raux
+DÃ©velopper une plateforme de streaming web complÃ¨te, fonctionnelle et dÃ©ployable.
+ImplÃ©menter un systÃ¨me d'abonnement sÃ©curisÃ© avec intÃ©gration Stripe.
+CrÃ©er un module inÃ©dit de gestion des studios de production.
+Garantir une expÃ©rience utilisateur fluide et professionnelle.
+Respecter les standards de sÃ©curitÃ© (JWT, RGPD) et de qualitÃ© logicielle.
+2.4 Objectifs spÃ©cifiques
+Mettre en place une API REST robuste avec Symfony 7 et API-Platform.
+DÃ©velopper un frontend moderne et rÃ©actif avec Next.js 14.
+IntÃ©grer un systÃ¨me de paiement par abonnement via Stripe.
+Concevoir et implÃ©menter le module Studios de Production (upload, diffusion, analytics).
+DÃ©ployer l'application dans un environnement Docker pour garantir la portabilitÃ©.
+RÃ©diger une documentation technique et utilisateur complÃ¨te.
+3. PÃ©rimÃ¨tre du TFE
+3.1 FonctionnalitÃ©s dans le pÃ©rimÃ¨tre TFE
+Le tableau ci-dessous liste les fonctionnalitÃ©s qui seront dÃ©veloppÃ©es et livrÃ©es dans le cadre du TFE 2025-2026 :
+Module
+Description
+PrioritÃ©
+Gestion des utilisateurs
+Inscription, connexion, profils, rÃ´les
+Haute
+Catalogue films &amp; sÃ©ries
+Browsing, recherche, filtres avancÃ©s
+Haute
+SystÃ¨me d'abonnement
+Plans, paiement Stripe, gestion
+Haute
+Module Studios de Production
+Upload, gestion, diffusion, analytics
+Haute
+Lecteur vidÃ©o intÃ©grÃ©
+Streaming adaptatif, contrÃ´les
+Haute
+Notation &amp; commentaires
+Avis, notes, modÃ©ration
+Moyenne
+Interface d'administration
+Tableau de bord, KPIs, modÃ©ration
+Haute
+Authentification JWT
+Tokens sÃ©curisÃ©s, refresh, RGPD
+Haute
+3.2 Hors pÃ©rimÃ¨tre TFE
+Les fonctionnalitÃ©s suivantes sont prÃ©vues pour la version complÃ¨te post-TFE et ne seront pas dÃ©veloppÃ©es dans le cadre de ce travail de fin d'Ã©tudes :
+Moteur de recommandations personnalisÃ©es par algorithme (Machine Learning).
+Application mobile native (iOS / Android).
+Gestion avancÃ©e des revenus et des royalties pour les studios.
+SystÃ¨me de sous-titres automatiques et traduction.
+IntÃ©gration de rÃ©seaux sociaux et partage de contenu.
+SystÃ¨me de live streaming en temps rÃ©el.
+4. Acteurs du systÃ¨me
+CINAF v2 implique cinq types d'acteurs aux rÃ´les et aux droits distincts :
+Acteur
+Description &amp; droits
+Visiteur
+Utilisateur non connectÃ©. Peut consulter la page d'accueil, le catalogue public (titres et descriptions), les bandes-annonces gratuites et s'inscrire sur la plateforme.
+AbonnÃ©
+Utilisateur inscrit et abonnÃ© Ã
+un plan payant. AccÃ¨de au catalogue complet, au lecteur vidÃ©o, peut noter et commenter les contenus, gÃ©rer son profil et son abonnement.
+CrÃ©ateur / Studio de production
+EntitÃ© (personne physique ou morale) qui dispose d'un espace dÃ©diÃ© pour uploader, gÃ©rer et diffuser ses productions audiovisuelles. AccÃ¨de Ã
+un tableau de bord analytics.
+ModÃ©rateur / Support
+Membre de l'Ã©quipe CINAF chargÃ© de modÃ©rer les commentaires, traiter les signalements et apporter une assistance aux utilisateurs. AccÃ¨s limitÃ© Ã
+l'espace d'administration.
+Administrateur
+AccÃ¨s complet Ã
+l'interface d'administration. GÃ¨re les utilisateurs, les studios, le catalogue, les abonnements, les KPIs et les paramÃ¨tres de la plateforme.
+5. Exigences fonctionnelles
+5.1 Module Authentification
+Inscription par e-mail avec validation du compte (lien de confirmation).
+Connexion sÃ©curisÃ©e par identifiants (e-mail / mot de passe).
+Authentification basÃ©e sur JWT (JSON Web Tokens) avec mÃ©canisme de refresh token.
+RÃ©initialisation du mot de passe par lien sÃ©curisÃ© envoyÃ© par e-mail.
+ConformitÃ© RGPD : consentement explicite, droit Ã
+l'oubli, portabilitÃ© des donnÃ©es.
+Gestion des rÃ´les (VISITEUR, ABONNE, CREATEUR, MODERATEUR, ADMIN).
+5.2 Module Catalogue
+Affichage du catalogue de films et sÃ©ries avec pagination.
+Recherche full-text par titre, genre, rÃ©alisateur, acteurs, annÃ©e.
+Filtres avancÃ©s : genre, pays, langue, annÃ©e de sortie, note moyenne.
+Page dÃ©tail d'un contenu : synopsis, fiche technique, bande-annonce, casting.
+Gestion des sÃ©ries : saisons et Ã©pisodes.
+Contenu Ã©ditorial : tendances, nouveautÃ©s, coups de cÅ“ur.
+5.3 Module Abonnement &amp; Paiement
+Plusieurs plans d'abonnement paramÃ©trables (mensuel, annuel).
+IntÃ©gration Stripe pour le paiement sÃ©curisÃ© par carte bancaire.
+Gestion des abonnements : souscription, renouvellement automatique, annulation.
+Historique des transactions et tÃ©lÃ©chargement des factures.
+PÃ©riode d'essai gratuite configurable.
+AccÃ¨s conditionnel au contenu selon le plan d'abonnement actif.
+5.4 Module Studios de Production
+Ce module constitue la principale innovation de CINAF v2 par rapport Ã
+la version prÃ©cÃ©dente.
+CrÃ©ation et gestion d'un profil studio (nom, description, logo, portfolio).
+Upload de fichiers vidÃ©o (formats supportÃ©s : MP4, MKV, AVI) vers AWS S3 ou Firebase Storage.
+Gestion du catalogue studio : ajout, Ã©dition, suppression de contenus.
+DÃ©finition des mÃ©tadonnÃ©es : titre, synopsis, genre, langue, annÃ©e, droits.
+ParamÃ©trage de la diffusion : date de mise en ligne, restrictions gÃ©ographiques.
+Tableau de bord analytics : vues, durÃ©e de visionnage, abonnÃ©s touchÃ©s.
+Gestion des droits et licences associÃ©s aux contenus.
+5.5 Module Administration
+Tableau de bord avec KPIs : nombre d'abonnÃ©s, revenus, contenus les plus vus.
+Gestion des utilisateurs : consultation, suspension, suppression.
+Gestion du catalogue global : validation, mise en avant, retrait de contenus.
+ModÃ©ration des commentaires : validation, suppression, signalement.
+Gestion des studios de production : validation, suspension.
+Export de donnÃ©es et rapports (CSV / PDF).
+5.6 Module Lecteur VidÃ©o
+Lecteur vidÃ©o intÃ©grÃ© avec contrÃ´les standards (lecture, pause, plein Ã©cran, volume).
+Streaming adaptatif selon la qualitÃ© de connexion de l'utilisateur.
+MÃ©morisation de la position de lecture (reprise oÃ¹ l'utilisateur s'est arrÃªtÃ©).
+SÃ©lection de la qualitÃ© vidÃ©o (SD, HD, Full HD).
+Gestion des sous-titres (si disponibles).
+5.7 Module Notation &amp; Commentaires
+SystÃ¨me de notation par Ã©toiles (1 Ã
+5) par les abonnÃ©s.
+Affichage de la note moyenne et du nombre d'avis.
+Commentaires textuels avec modÃ©ration a priori ou a posteriori.
+Signalement de commentaires inappropriÃ©s.
+6. Exigences non fonctionnelles
+CatÃ©gorie
+CritÃ¨re
+Exigence
+Performance
+Temps de chargement
+Pages chargÃ©es en moins de 3 secondes sur une connexion standard.
+Performance
+DÃ©marrage vidÃ©o
+DÃ©but de lecture en moins de 5 secondes aprÃ¨s demande.
+Performance
+API
+Temps de rÃ©ponse API infÃ©rieur Ã
+500 ms pour 95 % des requÃªtes.
+SÃ©curitÃ©
+Authentification
+Tokens JWT avec expiration courte (15 min) et refresh token (7 jours).
+SÃ©curitÃ©
+DonnÃ©es personnelles
+ConformitÃ© RGPD : chiffrement, minimisation, consentement.
+SÃ©curitÃ©
+Paiements
+Traitement exclusif via Stripe (PCI-DSS). Aucune donnÃ©e CB stockÃ©e localement.
+SÃ©curitÃ©
+Communications
+HTTPS obligatoire. En-tÃªtes de sÃ©curitÃ© HTTP (HSTS, CSP, X-Frame).
+DisponibilitÃ©
+Uptime
+DisponibilitÃ© cible de 99,5 % en production.
+ScalabilitÃ©
+Architecture
+Architecture conteneurisÃ©e (Docker) permettant une mise Ã
+l'Ã©chelle horizontale.
+CompatibilitÃ©
+Navigateurs
+Chrome, Firefox, Edge, Safari (versions N-2 minimum).
+MaintenabilitÃ©
+Code
+Code documentÃ©, testÃ© (tests unitaires back-end), versionnÃ© sur GitHub.
+AccessibilitÃ©
+WCAG
+Niveau A minimum respectÃ© pour les composants principaux de l'interface.
+7. Architecture technique
+7.1 Vue d'ensemble
+CINAF v2 repose sur une architecture en couches dÃ©couplÃ©es (backend / frontend), communiquant via une API REST sÃ©curisÃ©e. L'ensemble de l'application est conteneurisÃ© avec Docker pour faciliter le dÃ©veloppement local et le dÃ©ploiement en production.
+Composant
+Technologie
+Justification
+Backend (API)
+PHP Symfony 7 + API-Platform
+Framework PHP mature, API-Platform gÃ©nÃ¨re automatiquement les endpoints REST/JSON-LD. IdÃ©al pour des APIs robustes.
+Frontend (Web)
+Next.js 14 + Bootstrap 5
+Next.js offre le SSR/SSG pour de meilleures performances SEO. Bootstrap assure un design responsive rapide Ã
+implÃ©menter.
+Base de donnÃ©es
+MySQL 8
+SGBDR Ã©prouvÃ©, bien supportÃ© par Doctrine (ORM de Symfony). Parfaitement adaptÃ© aux donnÃ©es relationnelles de la plateforme.
+Stockage vidÃ©o
+AWS S3 ou Firebase Storage
+Solutions cloud scalables et Ã©conomiques pour stocker et diffuser des fichiers vidÃ©o de grande taille.
+Paiement
+Stripe
+Leader du paiement en ligne, API bien documentÃ©e, conforme PCI-DSS. SDK PHP et JavaScript disponibles.
+Authentification
+JWT (LexikJWTBundle)
+Tokens stateless compatibles avec l'architecture API. SÃ©curisÃ© et largement adoptÃ©.
+Versioning
+Git / GitHub
+Standard de l'industrie. Facilite la collaboration et le suivi des versions.
+Conteneurisation
+Docker &amp; Docker Compose
+Garantit la reproductibilitÃ© des environnements de dÃ©veloppement et de production.
+Serveur web
+Nginx (via Docker)
+Serveur web performant, utilisÃ© comme reverse proxy devant l'application Symfony.
+7.2 SchÃ©ma d'architecture
+L'architecture se dÃ©compose en trois couches principales :
+Couche PrÃ©sentation : Next.js 14 (SSR/CSR) consommant l'API via HTTP/HTTPS. Rendu cÃ´tÃ© serveur pour les pages publiques (SEO), rendu cÃ´tÃ© client pour les interfaces dynamiques (lecteur, dashboard).
+Couche API : Symfony 7 + API-Platform exposant des endpoints REST sÃ©curisÃ©s par JWT. Gestion de la logique mÃ©tier, validation des donnÃ©es, intÃ©gration Stripe.
+Couche DonnÃ©es : MySQL 8 pour les donnÃ©es relationnelles (utilisateurs, catalogue, abonnements). AWS S3 / Firebase pour les fichiers binaires (vidÃ©os, images).
+7.3 Environnement de dÃ©veloppement
+Docker Compose avec services : php-fpm, nginx, mysql, node (Next.js).
+Makefile pour les commandes courantes (migration BDD, tests, build).
+Gestion des variables d'environnement via fichiers .env (non versionnÃ©s).
+8. ModÃ©lisation
+Les modÃ¨les suivants seront produits au cours de la phase d'analyse et de conception (Phase 1 du planning). Ils seront intÃ©grÃ©s au rapport final du TFE.
+8.1 Diagramme de cas d'utilisation
+Le diagramme UML de cas d'utilisation reprÃ©sentera l'ensemble des interactions entre les cinq acteurs du systÃ¨me (Visiteur, AbonnÃ©, CrÃ©ateur/Studio, ModÃ©rateur, Administrateur) et les fonctionnalitÃ©s de la plateforme CINAF v2.
+Outil prÃ©vu : PlantUML ou draw.io.
+8.2 Diagramme de classes
+Le diagramme de classes UML modÃ©lisera les principales entitÃ©s du domaine et leurs relations :
+User (avec hÃ©ritage selon le rÃ´le)
+Film, Serie, Episode, Genre, Tag
+Subscription, SubscriptionPlan, Payment
+Studio, Production, Upload
+Review, Comment, Rating
+Outil prÃ©vu : StarUML ou Visual Paradigm.
+8.3 ModÃ¨le EntitÃ©-Association (MCD/MLD)
+Le modÃ¨le entitÃ©-association permettra de concevoir le schÃ©ma de la base de donnÃ©es MySQL 8. Il couvrira l'ensemble des tables, des contraintes d'intÃ©gritÃ© (clÃ©s primaires, clÃ©s Ã©trangÃ¨res, contraintes d'unicitÃ©) et des index nÃ©cessaires aux performances.
+Outil prÃ©vu : MySQL Workbench ou Looping.
+8.4 Maquettes UI/UX
+Des maquettes haute fidÃ©litÃ© seront rÃ©alisÃ©es avant le dÃ©veloppement frontend pour valider les parcours utilisateurs clÃ©s :
+Page d'accueil et catalogue.
+Fiche dÃ©tail d'un contenu.
+Lecteur vidÃ©o.
+Tableau de bord studio de production.
+Interface d'administration.
+Outil prÃ©vu : Figma.
+9. Planning prÃ©visionnel
+Le dÃ©veloppement de CINAF v2 est organisÃ© en cinq phases sur une durÃ©e de cinq mois (avril Ã
+aoÃ»t 2026).
+Phase
+PÃ©riode
+ActivitÃ©s principales
+Livrables
+Phase 1
+Avril 2026
+Analyse des besoins, rÃ©daction du cahier des charges final, diagrammes UML (cas d'utilisation, classes), conception de la base de donnÃ©es (MCD/MLD), rÃ©alisation des maquettes UI/UX Figma.
+CDC, UML, MCD, Maquettes
+Phase 2
+Mai 2026
+Mise en place de l'environnement Docker, modÃ©lisation et crÃ©ation de la base de donnÃ©es MySQL, dÃ©veloppement de l'API Symfony (authentification JWT, catalogue, abonnements, studios), tests unitaires backend.
+API fonctionnelle, BDD
+Phase 3
+Juin 2026
+DÃ©veloppement frontend Next.js (pages publiques, espace abonnÃ©, espace studio, interface admin), intÃ©gration avec l'API, intÃ©gration Stripe, lecteur vidÃ©o.
+Frontend intÃ©grÃ©
+Phase 4
+Juillet 2026
+Tests d'intÃ©gration et tests utilisateurs, corrections de bugs, optimisations de performance, dÃ©ploiement sur environnement de recette (VPS / cloud).
+Application dÃ©ployÃ©e
+Phase 5
+AoÃ»t 2026
+RÃ©daction du rapport de TFE, rÃ©daction de la documentation technique et utilisateur, prÃ©paration de la prÃ©sentation orale.
+Rapport, docs, slides
+Note : Ce planning est prÃ©visionnel et pourra Ãªtre ajustÃ© en cours de dÃ©veloppement en accord avec l'encadrant acadÃ©mique, tout en respectant la date limite de remise du TFE.
+10. Livrables attendus
+Ã€ l'issue du TFE, les livrables suivants devront Ãªtre remis :
+#
+Livrable
+Description
+1
+Code source versionnÃ© (GitHub)
+Ensemble du code source backend (Symfony) et frontend (Next.js), versionnÃ© sur un dÃ©pÃ´t GitHub public ou privÃ© avec historique de commits clair.
+2
+Application fonctionnelle dÃ©ployÃ©e
+Application dÃ©ployÃ©e sur un serveur accessible en ligne (VPS, Heroku, Railway, Render ou Ã©quivalent) avec URL fournie dans le rapport.
+3
+Documentation technique
+Documentation de l'API (Swagger/OpenAPI gÃ©nÃ©rÃ© par API-Platform), guide d'installation et de dÃ©ploiement, architecture dÃ©taillÃ©e.
+4
+Documentation utilisateur
+Guide d'utilisation destinÃ© aux diffÃ©rents types d'utilisateurs (abonnÃ©, studio, administrateur).
+5
+Rapport de TFE
+Rapport acadÃ©mique complet selon les normes ISL : introduction, analyse, conception, dÃ©veloppement, tests, conclusion et perspectives.
+6
+PrÃ©sentation orale
+Support de prÃ©sentation (slides) et dÃ©monstration live de l'application lors de la soutenance.
+11. Contraintes
+11.1 Contraintes acadÃ©miques
+Respect des dÃ©lais imposÃ©s par le calendrier acadÃ©mique ISL pour la remise du TFE.
+Suivi rÃ©gulier avec l'encadrant acadÃ©mique (rÃ©unions de suivi, jalons intermÃ©diaires).
+Respect des normes de rÃ©daction du rapport de TFE dÃ©finies par l'ISL.
+Travail individuel : le projet est rÃ©alisÃ© en solo par Takoumbo Fabrice.
+11.2 Contraintes techniques
+Stack technique imposÃ©/recommandÃ© : PHP Symfony 7, Next.js 14, MySQL 8.
+Utilisation obligatoire de Git/GitHub pour le versioning du code.
+Conteneurisation Docker requise pour l'environnement de dÃ©veloppement.
+Respect des bonnes pratiques de dÃ©veloppement (PSR pour PHP, ESLint pour JS).
+11.3 Contraintes lÃ©gales
+ConformitÃ© RGPD obligatoire : consentement, droit Ã
+l'oubli, portabilitÃ© des donnÃ©es.
+Respect des droits d'auteur pour les contenus diffusÃ©s sur la plateforme.
+Conditions gÃ©nÃ©rales d'utilisation et politique de confidentialitÃ© Ã
+rÃ©diger.
+ConformitÃ© PCI-DSS garantie par l'utilisation exclusive de Stripe pour les paiements.
+11.4 Contraintes budgÃ©taires
+Budget limitÃ© : utilisation prioritaire des offres gratuites ou low-cost des services cloud.
+AWS S3 Free Tier ou Firebase Storage plan gratuit pour le stockage vidÃ©o.
+HÃ©bergement sur des plateformes avec offres gratuites (Railway, Render, Fly.io ou VPS Ã©tudiant).
+Domaine et certificat SSL : utilisation de Let's Encrypt (gratuit) pour HTTPS.
+12. Glossaire
+Terme
+DÃ©finition
+API
+Application Programming Interface. Interface permettant Ã
+deux applications de communiquer entre elles.
+API REST
+Architecture d'API basÃ©e sur les principes REST (Representational State Transfer) utilisant le protocole HTTP.
+API-Platform
+Framework PHP construit sur Symfony facilitant la crÃ©ation d'APIs REST et GraphQL.
+AWS S3
+Amazon Web Services Simple Storage Service. Service de stockage de fichiers dans le cloud.
+Bootstrap 5
+Framework CSS open-source facilitant la crÃ©ation d'interfaces web responsive.
+CINAF
+CinÃ©ma Africain. Nom de la plateforme de streaming dÃ©veloppÃ©e dans le cadre de ce TFE.
+Docker
+Plateforme de conteneurisation permettant d'empaqueter une application et ses dÃ©pendances.
+Docker Compose
+Outil permettant de dÃ©finir et de gÃ©rer des applications multi-conteneurs Docker.
+JWT
+JSON Web Token. Standard ouvert (RFC 7519) pour la crÃ©ation de tokens d'accÃ¨s sÃ©curisÃ©s.
+MySQL
+SystÃ¨me de gestion de base de donnÃ©es relationnelle open-source.
+Next.js
+Framework React permettant le rendu cÃ´tÃ© serveur (SSR) et la gÃ©nÃ©ration de sites statiques.
+PCI-DSS
+Payment Card Industry Data Security Standard. Norme de sÃ©curitÃ© pour la gestion des donnÃ©es de paiement.
+RGPD
+RÃ¨glement GÃ©nÃ©ral sur la Protection des DonnÃ©es. RÃ©glementation europÃ©enne sur la protection des donnÃ©es personnelles.
+SaaS
+Software as a Service. ModÃ¨le de distribution de logiciel oÃ¹ l'application est hÃ©bergÃ©e dans le cloud.
+SSR
+Server-Side Rendering. Technique de rendu des pages web cÃ´tÃ© serveur avant envoi au navigateur.
+Stripe
+Plateforme de paiement en ligne proposant des APIs pour accepter des paiements sur internet.
+Symfony
+Framework PHP open-source pour le dÃ©veloppement d'applications web.
+TFE
+Travail de Fin d'Ã‰tudes. Projet acadÃ©mique de fin de cursus Ã
+l'ISL.
+
