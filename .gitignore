@@ -4,6 +4,4 @@
 .vscode/
 .idea/
 .DS_Store
-*_MEMORY.md
-CLAUDE.md
-doc/routmap.md
+*.md
