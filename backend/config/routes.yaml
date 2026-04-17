@@ -3,3 +3,15 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+# Login intercepté par le firewall Symfony (json_login) — ce controller n'est jamais appelé
+api_auth_login:
+    path: /api/auth/login
+    methods: [POST]
+    controller: App\Controller\Auth\LoginController::__invoke
+
+# Route du refresh token (gesdinet/jwt-refresh-token-bundle)
+api_auth_refresh:
+    path: /api/auth/refresh
+    methods: [POST]
+    controller: gesdinet.jwtrefreshtoken.controller.refresh
